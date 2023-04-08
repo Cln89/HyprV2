@@ -1,45 +1,46 @@
 #!/bin/bash
 
-# The follwoing will attempt to install all needed packages to run Hyprland
+# The following will attempt to install all needed packages to run Hyprland
 # This is a quick and dirty script there are no error checking
 # This script is meant to run on a clean fresh Arch install
 #
 # Below is a list of the packages that would be installed
 #
-# hyprland: This is the Hyprland compositor
-# kitty: This is the default terminal
-# waybar-hyprland: This is a fork of waybar with Hyprland workspace support
-# swww: This is used to set a desktop background image
-# swaylock-effects: This allows for the locking of the desktop its a fork that adds some editional visual effects
-# wofi: This is an application launcher menu
-# wlogout: This is a logout menu that allows for shutdown, reboot and sleep
-# mako: This is a graphical notification daemon
-# xdg-desktop-portal-hyprland-git: xdg-desktop-portal backend for hyprland
-# swappy: This is a screenshot editor tool
-# grim: This is a screenshot tool it grabs images from a Wayland compositor
-# slurp: This helps with screenshots, it selects a region in a Wayland compositor
-# thunar: This is a graphical file manager
-# polkit-gnome: needed to get superuser access on some graphical appliaction
-# python-requests: needed for the weather module script to execute
-# pamixer: This helps with audio settings such as volume
-# pavucontrol: GUI for managing audio and audio devices
-# brightnessctl: used to control monitor and keyboard bright level
-# bluez: the bluetooth service
-# bluez-utils: command line utilities to interact with bluettoth devices
-# blueman: Graphical bluetooth manager
-# network-manager-applet: Applet for managing network connection
-# gvfs: adds missing functionality to thunar such as automount usb drives
-# thunar-archive-plugin: Provides a front ent for thunar to work with compressed files
-# file-roller: Backend set of tools for working with compressed files
-# btop: Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
-# pacman-contrib: adds additional tools for pacman. needed for showing system updates in the waybar
-# starship: allows to customize the shell prompt
-# ttf-jetbrains-mono-nerd: Som nerd fonts for icons and overall look
-# noto-fonts-emoji: fonts needed by the weather script in the top bar
-# lxappearance: used to set GTK theme
-# xfce4-settings: set of tools for xfce, needed to set GTK theme
-# sddm-git: developement version of SDDM which is a display manager for graphical login
-# sddm-sugar-candy-git: an sddm theme my theme is based on (copy of)
+# blueman: Graphical bluetooth manager                                                                              | https://github.com/blueman-project/blueman
+# bluez: the bluetooth service                                                                                      | http://www.bluez.org/
+# bluez-utils: command line utilities to interact with bluetooth devices                                            | http://www.bluez.org/
+# brightnessctl: used to control monitor and keyboard bright level                                                  | https://github.com/Hummer12007/brightnessctl
+# btop: Resource monitor that shows usage and stats for processor, memory, disks, network and processes.            | https://github.com/aristocratos/btop
+# hyprland: This is the Hyprland compositor                                                                         | https://github.com/hyprwm/Hyprland
+# grim: This is a screenshot tool it grabs images from a Wayland compositor                                         | https://sr.ht/~emersion/grim/
+# kitty: This is the default terminal                                                                               | https://github.com/kovidgoyal/kitty
+# bat: This is a cat clone with syntax highlighting and Git integration for your terminal                           | https://github.com/sharkdp/bat
+# starship: allows to customize the shell prompt                                                                    | https://starship.rs/, https://github.com/starship/starship
+# waybar-hyprland: This is a fork of waybar with Hyprland workspace support                                         | https://github.com/Alexays/Waybar
+# swww: This is used to set an animated desktop background image                                                    | https://github.com/Horus645/swww
+# swaylock-effects: This allows for the locking of the desktop its a fork that adds some additional visual effects  | https://github.com/mortie/swaylock-effects
+# wofi: This is an application launcher menu                                                                        | https://hg.sr.ht/~scoopta/wofi
+# wlogout: This is a logout menu that allows for shutdown, reboot and sleep                                         | https://github.com/ArtsyMacaw/wlogout
+# mako: This is a graphical notification daemon                                                                     | https://github.com/emersion/mako
+# xdg-desktop-portal-hyprland-git: xdg-desktop-portal backend for hyprland                                          | https://github.com/hyprwm/xdg-desktop-portal-hyprland
+# swappy: This is a screenshot editor tool                                                                          | https://github.com/jtheoof/swappy
+# slurp: This helps with screenshots, it selects a region in a Wayland compositor                                   | https://github.com/emersion/slurp
+# thunar: This is a graphical file manager                                                                          | https://gitlab.xfce.org/xfce/thunar
+# polkit-gnome: needed to get superuser access on some graphical application                                        | https://gitlab.gnome.org/GNOME/polkit-gnome, https://archlinux.org/packages/community/x86_64/polkit-gnome/
+# python-requests: needed for the weather module script to execute                                                  | https://requests.readthedocs.io/en/latest/
+# pamixer: This helps with audio settings such as volume                                                            | https://github.com/cdemoulins/pamixer
+# pavucontrol: GUI for managing audio and audio devices                                                             | https://freedesktop.org/software/pulseaudio/pavucontrol/, https://github.com/pulseaudio/pavucontrol
+# network-manager-applet: Applet for managing network connection                                                    | https://gitlab.gnome.org/GNOME/network-manager-applet
+# gvfs: adds missing functionality to thunar such as automount usb drives                                           | https://gitlab.gnome.org/GNOME/gvfs
+# thunar-archive-plugin: Provides a front end for thunar to work with compressed files                              | https://docs.xfce.org/xfce/thunar/archive
+# file-roller: Backend set of tools for working with compressed files                                               | https://gitlab.gnome.org/GNOME/file-roller
+# pacman-contrib: adds additional tools for pacman. needed for showing system updates in the waybar                 | https://archlinux.org/packages/extra/x86_64/pacman-contrib/
+# ttf-jetbrains-mono-nerd: Som nerd fonts for icons and overall look                                                | https://github.com/ryanoasis/nerd-fonts
+# noto-fonts-emoji: fonts needed by the weather script in the top bar                                               | https://archlinux.org/packages/extra/any/noto-fonts-emoji/
+# lxappearance: used to set GTK theme                                                                               | https://github.com/lxde/lxappearance
+# xfce4-settings: set of tools for xfce, needed to set GTK theme                                                    | https://gitlab.xfce.org/xfce/xfce4-settings, https://docs.xfce.org/xfce/xfce4-settings/start
+# sddm-git: developement version of SDDM which is a display manager for graphical login                             | https://github.com/sddm/sddm
+# sddm-sugar-candy-git: an sddm theme my theme is based on (copy of)                                                | https://aur.archlinux.org/packages/sddm-sugar-candy-git
 
 # set some colors
 CNT="[\e[1;36mNOTE\e[0m]"
@@ -47,7 +48,7 @@ COK="[\e[1;32mOK\e[0m]"
 CER="[\e[1;31mERROR\e[0m]"
 CAT="[\e[1;37mATTENTION\e[0m]"
 CWR="[\e[1;35mWARNING\e[0m]"
-CAC="[\e[1;33mACTION\e[0m]"
+#CAC="[\e[1;33mACTION\e[0m]"
 INSTLOG="install.log"
 
 #clear the screen
@@ -79,21 +80,21 @@ If you are worried about entering your password then you may want to review the 
 
 sleep 3
 
-#### Check for yay ####
-ISYAY=/sbin/yay
-if [ -f "$ISYAY" ]; then 
-    echo -e "$COK - yay was located, moving on."
+#### Check for paru ####
+ISPARU=/sbin/paru
+if [ -f "$ISPARU" ]; then
+    echo -e "$COK - paru was located, moving on."
 else 
-    echo -e "$CWR - Yay was NOT located"
-    read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install yay (y,n) ' INSTYAY
-    if [[ $INSTYAY == "Y" || $INSTYAY == "y" ]]; then
-        git clone https://aur.archlinux.org/yay-git.git &>> $INSTLOG
-        cd yay-git
+    echo -e "$CWR - Paru was NOT located"
+    read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install paru (y,n) ' INSTPARU
+    if [[ $INSTPARU == "Y" || $INSTPARU == "y" ]]; then
+        git clone https://aur.archlinux.org/paru-git.git &>> $INSTLOG
+        cd paru-git || exit
         makepkg -si --noconfirm &>> ../$INSTLOG
         cd ..
         
     else
-        echo -e "$CER - Yay is required for this script, now exiting"
+        echo -e "$CER - paru is required for this script, now exiting"
         exit
     fi
 fi
@@ -115,20 +116,20 @@ fi
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the packages? (y,n) ' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     # update the DB first
-    echo -e "$COK - Updating yay database..."
-    yay -Suy --noconfirm &>> $INSTLOG
+    echo -e "$COK - Updating paru database..."
+    paru -Suy --noconfirm &>> $INSTLOG
     
     #Stage 1
     echo -e "\n$CNT - Stage 1 - Installing main components, this may take a while..."
     for SOFTWR in hyprland kitty waybar-hyprland swww swaylock-effects wofi wlogout mako xdg-desktop-portal-hyprland-git swappy grim slurp thunar
     do
         #First lets see if the package is there
-        if yay -Qs $SOFTWR > /dev/null ; then
+        if paru -Qs $SOFTWR > /dev/null ; then
             echo -e "$COK - $SOFTWR is already installed."
         else
             echo -e "$CNT - Now installing $SOFTWR ..."
-            yay -S --noconfirm $SOFTWR &>> $INSTLOG
-            if yay -Qs $SOFTWR > /dev/null ; then
+            paru -S --noconfirm $SOFTWR &>> $INSTLOG
+            if paru -Qs $SOFTWR > /dev/null ; then
                 echo -e "$COK - $SOFTWR was installed."
             else
                 echo -e "$CER - $SOFTWR install had failed, please check the install.log"
@@ -142,12 +143,12 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     for SOFTWR in polkit-gnome python-requests pamixer pavucontrol brightnessctl bluez bluez-utils blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop pacman-contrib
     do
         #First lets see if the package is there
-        if yay -Qs $SOFTWR > /dev/null ; then
+        if paru -Qs $SOFTWR > /dev/null ; then
             echo -e "$COK - $SOFTWR is already installed."
         else
             echo -e "$CNT - Now installing $SOFTWR ..."
-            yay -S --noconfirm $SOFTWR &>> $INSTLOG
-            if yay -Qs $SOFTWR > /dev/null ; then
+            paru -S --noconfirm $SOFTWR &>> $INSTLOG
+            if paru -Qs $SOFTWR > /dev/null ; then
                 echo -e "$COK - $SOFTWR was installed."
             else
                 echo -e "$CER - $SOFTWR install had failed, please check the install.log"
@@ -158,15 +159,15 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 3
     echo -e "\n$CNT - Stage 3 - Installing theme and visual related tools and utilities, this may take a while..."
-    for SOFTWR in starship ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings sddm-git sddm-sugar-candy-git 
+    for SOFTWR in bat starship ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings sddm-git sddm-sugar-candy-git
     do
         #First lets see if the package is there
-        if yay -Qs $SOFTWR > /dev/null ; then
+        if paru -Qs $SOFTWR > /dev/null ; then
             echo -e "$COK - $SOFTWR is already installed."
         else
             echo -e "$CNT - Now installing $SOFTWR ..."
-            yay -S --noconfirm $SOFTWR &>> $INSTLOG
-            if yay -Qs $SOFTWR > /dev/null ; then
+            paru -S --noconfirm $SOFTWR &>> $INSTLOG
+            if paru -Qs $SOFTWR > /dev/null ; then
                 echo -e "$COK - $SOFTWR was installed."
             else
                 echo -e "$CER - $SOFTWR install had failed, please check the install.log"
@@ -187,7 +188,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     
     # Clean out other portals
     echo -e "$CNT - Cleaning out conflicting xdg portals..."
-    yay -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk &>> $INSTLOG
+    paru -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk &>> $INSTLOG
 fi
 
 ### Copy Config Files ###
@@ -206,7 +207,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
         cp -R $DIR ~/.config/ &>> $INSTLOG
     done
 
-    # Set some files as exacutable
+    # Set some files as executable
     echo -e "$CNT - Setting some file as executable." 
     chmod +x ~/.config/hypr/scripts/bgaction
     chmod +x ~/.config/hypr/scripts/xdg-portal-hyprland
@@ -228,7 +229,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
         sudo mkdir $WLDIR
     fi 
     sudo cp extras/hyprland.desktop /usr/share/wayland-sessions/
-    sudo sudo sed -i 's/Exec=Hyprland/Exec=\/home\/'$USER'\/start-hypr/' /usr/share/wayland-sessions/hyprland.desktop
+    sudo sudo sed -i "s/Exec=Hyprland/Exec=\/home\/'$USER'\/start-hypr/" /usr/share/wayland-sessions/hyprland.desktop
     cp extras/start-hypr ~/
 
     #setup the first look and feel as dark
@@ -248,37 +249,37 @@ if [[ $STAR == "Y" || $STAR == "y" ]]; then
     echo -e "$CNT - Hansen Crusher, Engage!"
     echo -e "$CNT - Updating .bashrc..."
     echo -e '\neval "$(starship init bash)"' >> ~/.bashrc
-    echo -e "$CNT - copying starship config file to ~/.confg ..."
+    echo -e "$CNT - copying starship config file to ~/.config ..."
     cp extras/starship.toml ~/.config/
 fi
 
 ### Install software for Asus ROG laptops ###
-read -n1 -rep $'[\e[1;33mACTION\e[0m] - For ASUS ROG Laptops - Would you like to install Asus ROG software support? (y,n) ' ROG
-if [[ $ROG == "Y" || $ROG == "y" ]]; then
-    echo -e "$CNT - Adding Keys..."
-    sudo pacman-key --recv-keys 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 &>> $INSTLOG
-    sudo pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 &>> $INSTLOG
-    sudo pacman-key --lsign-key 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 &>> $INSTLOG
-    sudo pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 &>> $INSTLOG
-
-    LOC="/etc/pacman.conf"
-    echo -e "$CNT - Updating $LOC with g14 repo."
-    echo -e "\n[g14]\nServer = https://arch.asus-linux.org" | sudo tee -a $LOC &>> $INSTLOG
-    echo -e "\n"
-    echo -e "$CNT - Update the system..."
-    sudo pacman -Suy --noconfirm &>> $INSTLOG
-
-    echo -e "$CNT - Installing ROG pacakges..."
-    sudo pacman -S --noconfirm asusctl supergfxctl rog-control-center &>> $INSTLOG
-    echo -e "$CNT - Activating ROG services..."
-    sudo systemctl enable --now power-profiles-daemon.service &>> $INSTLOG
-    sleep 2
-    sudo systemctl enable --now supergfxd &>> $INSTLOG
-    sleep 2
-
-    #add the keybinding file to the config
-    echo -e "\nsource = ~/.config/hypr/rog-g15-strix-2021-binds.conf" >> ~/.config/hypr/hyprland.conf
-fi
+#read -n1 -rep $'[\e[1;33mACTION\e[0m] - For ASUS ROG Laptops - Would you like to install Asus ROG software support? (y,n) ' ROG
+#if [[ $ROG == "Y" || $ROG == "y" ]]; then
+#    echo -e "$CNT - Adding Keys..."
+#    sudo pacman-key --recv-keys 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 &>> $INSTLOG
+#    sudo pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 &>> $INSTLOG
+#    sudo pacman-key --lsign-key 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 &>> $INSTLOG
+#    sudo pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 &>> $INSTLOG
+#
+#    LOC="/etc/pacman.conf"
+#    echo -e "$CNT - Updating $LOC with g14 repo."
+#    echo -e "\n[g14]\nServer = https://arch.asus-linux.org" | sudo tee -a $LOC &>> $INSTLOG
+#    echo -e "\n"
+#    echo -e "$CNT - Update the system..."
+#    sudo pacman -Suy --noconfirm &>> $INSTLOG
+#
+#    echo -e "$CNT - Installing ROG packages..."
+#    sudo pacman -S --noconfirm asusctl supergfxctl rog-control-center &>> $INSTLOG
+#    echo -e "$CNT - Activating ROG services..."
+#    sudo systemctl enable --now power-profiles-daemon.service &>> $INSTLOG
+#    sleep 2
+#    sudo systemctl enable --now supergfxd &>> $INSTLOG
+#    sleep 2
+#
+#    #add the keybinding file to the config
+#    echo -e "\nsource = ~/.config/hypr/rog-g15-strix-2021-binds.conf" >> ~/.config/hypr/hyprland.conf
+#fi
 
 ### Script is done ###
 echo -e "$CNT - Script had completed!"
