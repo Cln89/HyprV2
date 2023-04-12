@@ -4,6 +4,8 @@
 # This is a quick and dirty script there are no error checking
 # This script is meant to run on a clean fresh Arch install
 #
+# NOTE: Due to a bug I found with GPG I was unable to retrieve gpg Keys, to fix this add port 80 to the domain of your keyserver in tour gpg config.
+#
 # Below is a list of the packages that would be installed
 #
 # blueman: Graphical bluetooth manager                                                                              | https://github.com/blueman-project/blueman
@@ -22,7 +24,7 @@
 # wofi: This is an application launcher menu                                                                        | https://hg.sr.ht/~scoopta/wofi
 # wlogout: This is a logout menu that allows for shutdown, reboot and sleep                                         | https://github.com/ArtsyMacaw/wlogout
 # mako: This is a graphical notification daemon                                                                     | https://github.com/emersion/mako
-# xdg-desktop-portal-hyprland-git: xdg-desktop-portal backend for hyprland                                          | https://github.com/hyprwm/xdg-desktop-portal-hyprland
+# xdg-desktop-portal-hyprland: xdg-desktop-portal backend for hyprland                                          | https://github.com/hyprwm/xdg-desktop-portal-hyprland
 # swappy: This is a screenshot editor tool                                                                          | https://github.com/jtheoof/swappy
 # slurp: This helps with screenshots, it selects a region in a Wayland compositor                                   | https://github.com/emersion/slurp
 # thunar: This is a graphical file manager                                                                          | https://gitlab.xfce.org/xfce/thunar
@@ -121,7 +123,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     
     #Stage 1
     echo -e "\n$CNT - Stage 1 - Installing main components, this may take a while..."
-    for SOFTWR in hyprland kitty waybar-hyprland swww swaylock-effects wofi wlogout mako xdg-desktop-portal-hyprland-git swappy grim slurp thunar
+    for SOFTWR in hyprland kitty waybar-hyprland swww swaylock-effects wofi wlogout mako xdg-desktop-portal-hyprland swappy grim slurp thunar
     do
         #First lets see if the package is there
         if paru -Qs $SOFTWR > /dev/null ; then
